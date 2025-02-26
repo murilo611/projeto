@@ -1,0 +1,190 @@
+/* Resetando margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte geral */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #101010;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Botões */
+.btn-home, .btn-next {
+    background-color: rgb(226, 43, 217); /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 1em; /* Ajuste para tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para efeito 3D */
+    margin: 20px;
+    text-decoration: none; /* Remove underline */
+}
+
+.btn-home:hover, .btn-next:hover {
+    background-color: #6b00b3; /* Cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+}
+
+.btn-home:active, .btn-next:active {
+    transform: translateY(1px); /* Efeito de clique */
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1); /* Sombra reduzida ao clicar */
+}
+
+/* Seção principal com a imagem de fundo */
+.sobre-mim {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    background: url('fotos/1.jpg') center/cover no-repeat; /* Substitua com o caminho da sua imagem de fundo */
+    position: relative;
+    backdrop-filter: blur(5px); /* Desfoque do fundo para destacar o conteúdo */
+}
+
+/* Container para o conteúdo */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.6); /* Fundo escuro translúcido para destacar o conteúdo */
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-out;
+}
+
+/* Efeito de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Estilo da imagem de perfil */
+.imagem {
+    flex: 0 0 220px;
+    text-align: center;
+    position: relative;
+}
+
+.foto-perfil {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease-in-out;
+}
+
+.foto-perfil:hover {
+    transform: scale(1.15);
+}
+
+/* Estilo do texto */
+.texto {
+    flex: 1;
+    padding-left: 30px;
+    color: #e0e0e0;
+    max-width: 700px;
+}
+
+.texto h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.texto h1::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #ff6a00;
+    animation: underlineAnimation 2s ease-in-out infinite;
+}
+
+@keyframes underlineAnimation {
+    0% {
+        width: 50px;
+        background: #ff6a00;
+    }
+    50% {
+        width: 100px;
+        background: #f07b38;
+    }
+    100% {
+        width: 50px;
+        background: #ff6a00;
+    }
+}
+
+.texto p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Efeito de Hover nos parágrafos */
+.texto p:hover {
+    transform: translateX(5px);
+    color: #f7f7f7;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .imagem {
+        margin-bottom: 30px;
+    }
+
+    .foto-perfil {
+        width: 180px;
+        height: 180px;
+    }
+
+    .texto {
+        padding-left: 0;
+    }
+
+    .texto h1 {
+        font-size: 40px;
+    }
+
+    .texto p {
+        font-size: 16px;
+    }
+}

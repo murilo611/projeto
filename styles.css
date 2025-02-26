@@ -1,0 +1,118 @@
+/* Estilos básicos para dispositivos móveis (Mobile-First) */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.video-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.conteudo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 1; /* Certifique-se de que este valor é maior que o do vídeo */
+}
+
+h1 {
+    font-size: 2em; /* Tamanho da fonte para dispositivos móveis */
+    margin: 0;
+}
+
+p {
+    font-size: 1em; /* Tamanho da fonte para dispositivos móveis */
+}
+
+.btn-saiba-mais {
+    background-color: rgb(226, 43, 217); /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 1em; /* Ajuste para tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para efeito 3D */
+}
+
+.btn-saiba-mais:hover {
+    background-color: #6b00b3; /* Cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+}
+
+.btn-saiba-mais:active {
+    transform: translateY(1px); /* Efeito de clique */
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1); /* Sombra reduzida ao clicar */
+}
+
+
+.circle-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.circle-link {
+    width: 100px; /* Largura dos círculos */
+    height: 100px; /* Altura dos círculos */
+    margin: 0 10px;
+    border-radius: 50%; /* Transformar as imagens em círculos */
+    overflow: hidden; /* Esconder qualquer coisa fora dos círculos */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para efeito 3D */
+    transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.circle-link img {
+    width: 100%; /* Garantir que a imagem ocupe todo o círculo */
+    height: 100%; /* Garantir que a imagem ocupe todo o círculo */
+    object-fit: cover; /* Ajustar a imagem para cobrir o círculo */
+}
+
+.circle-link:hover {
+    transform: scale(1.1); /* Aumentar o tamanho do círculo ao passar o mouse */
+}
+
+.circle-link:active {
+    transform: scale(0.9); /* Reduzir o tamanho do círculo ao clicar */
+}
+
+
+
+/* Media Queries para telas maiores */
+@media (min-width: 600px) {
+    h1 {
+        font-size: 4em; /* Ajuste do tamanho da fonte para telas maiores */
+    }
+
+    p {
+        font-size: 2em; /* Ajuste do tamanho da fonte para telas maiores */
+    }
+}
+
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 5em; /* Ajuste do tamanho da fonte para telas ainda maiores */
+    }
+
+    p {
+        font-size: 3em; /* Ajuste do tamanho da fonte para telas ainda maiores */
+    }
+}
